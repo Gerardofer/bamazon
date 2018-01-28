@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Gerardofer/bamazon#readme",
   "dependencies": {
     "inquirer": "^5.0.1",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "terminal-table": "0.0.12"
   }
 }
