@@ -86,6 +86,13 @@ function askItem() {
             if ((res[0].stock_quatity - answers.stock_quatity) > 0) {
                 console.log("Your request is being fullfilled");
                 console.log("Your total is: " + (answers.stock_quatity * res[0].price));
+                connection.query("UPDATE products SET stock_quatity = stock_quatity - " + answers.stock_quatity + "WHERE ?", [{ item_id: answers.item_id }], function(error, res) {
+                    if (error) {
+                        console.error(error.message)
+                    }
+                    // console.log(res);
+                    // console.log("There are " + res[0].stock_quatity + " left in the inventory for " + res[0].product_name);
+                })
             } else {
                 console.log("We do not currently have enough inventory to fulfill this order")
             }
