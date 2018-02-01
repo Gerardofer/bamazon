@@ -54,12 +54,24 @@ function askItem() {
     inquirer.prompt([{
             type: "input",
             name: "item_id",
-            message: "Please select the Item ID you want to purchase"
+            message: "Please select the Item ID you want to purchase",
+            validate: function(answer) {
+                if (!parseInt(answer)) {
+                    return "Please enter a valid number";
+                }
+                return true;
+            }
         },
         {
             type: "input",
             name: "stock_quatity",
-            message: "Please select a quantity"
+            message: "Please select a quantity",
+            validate: function(answer) {
+                if (!parseInt(answer)) {
+                    return "Please use muneric values to enter quantity";
+                }
+                return true;
+            }
         }
     ]).then(answers => {
         // console.log(answers.item_id);
@@ -94,9 +106,6 @@ function askItem() {
                     if (error) {
                         console.error(error.message)
                     }
-
-                    // console.log(res);
-                    // console.log("There are " + res[0].stock_quatity + " left in the inventory for " + res[0].product_name);
                 })
             } else {
                 console.log("We do not currently have enough inventory to fulfill this order")
