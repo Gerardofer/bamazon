@@ -12,3 +12,6 @@ The application will then ask for a specific quantity of the desired product at 
 
 Finally we can see how the data base is being updated after the order is fullfiled.  
 
+[![https://gyazo.com/5374a2b596c7b5c3baf2e3d599348307](https://i.gyazo.com/5374a2b596c7b5c3baf2e3d599348307.gif)](https://gyazo.com/5374a2b596c7b5c3baf2e3d599348307)
+
+Thanks!
